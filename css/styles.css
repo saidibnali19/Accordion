@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    color: hsl(0 0% 100%);
+    background-color: dodgerblue;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    letter-spacing: 2px;
+}
+
+.container{
+    padding-inline: var(--padding-inline, 1rem);
+    max-width: 60rem;
+    margin-inline: auto;
+}
+
+.label{
+    position: relative;
+    cursor: pointer;
+}
+
+.label::after{
+    content: "+";
+    position: absolute;
+    right: 1rem;
+    top: 0;
+}
+
+.content{
+    height: 0;
+    overflow: hidden;
+    transition: 400ms;
+}
+
+.active .content{
+    height: auto;
+}
+
+.active .label::after{
+    content: "-";
+}
